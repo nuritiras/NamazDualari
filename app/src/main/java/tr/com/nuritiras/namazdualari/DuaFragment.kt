@@ -30,6 +30,32 @@ class DuaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.imageViewDua.setOnClickListener{
+
+        }
+
+        binding.buttonSil.setOnClickListener {
+
+        }
+
+        binding.buttonKaydet.setOnClickListener {
+
+        }
+
+        arguments?.let {
+            val bilgi = DuaFragmentArgs.fromBundle(it).bilgi
+            if (bilgi=="yeni")
+            {
+                binding.buttonSil.isEnabled=false
+                binding.buttonKaydet.isEnabled=true
+            }
+            else
+            {
+                binding.buttonSil.isEnabled=true
+                binding.buttonKaydet.isEnabled=false
+            }
+
+        }
     }
 
     override fun onDestroyView() {
